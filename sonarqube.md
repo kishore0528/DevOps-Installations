@@ -149,17 +149,19 @@ RUN_AS_USER=“sonar”
 ```
 
 
-Save and exit the file.
+**Save and exit the file**
 
 
----------------------------------------------------------------------------------------
+**---------------------------------------------------------------------------------------**
 
-6. Setup Systemd service
- Create a systemd service file to start SonarQube at system boot.
+**✅ 28. Setup Systemd service**
+ **Create a systemd service file to start SonarQube at system boot**
+```bash
+sudo vi /etc/systemd/system/sonar.service
+```
 
-$ sudo vi /etc/systemd/system/sonar.service
-Paste the following lines to the file.
-
+**Paste the following lines to the file**
+```bash
 [Unit]
 Description=SonarQube service
 After=syslog.target network.target
@@ -179,37 +181,39 @@ LimitNPROC=4096
 
 [Install]
 WantedBy=multi-user.target
+```
+**Save and exit the file**
+**Enable the SonarQube service to run at system startup**
+```bash
+sudo systemctl enable sonar
+ ```
+**Start the SonarQube service**
+```bash
+sudo systemctl start sonar
+```
+**Check the service status**
+```bash
+sudo systemctl status sonar
+```
+**---------------------------------------------------------------------------------------**
 
-Save and exit the file.
+**✅ 29. Modify Kernel System Limits**
+**SonarQube uses Elasticsearch to store its indices in an MMap FS directory**
+**It requires some changes to the system defaults**
 
-Enable the SonarQube service to run at system startup.
-$ sudo systemctl enable sonar
- 
-Start the SonarQube service.
-$ sudo systemctl start sonar
-
-Check the service status.
-$ sudo systemctl status sonar
-
-
----------------------------------------------------------------------------------------
-
-
-7. Modify Kernel System Limits
-SonarQube uses Elasticsearch to store its indices in an MMap FS directory. It requires some changes to the system defaults.
-
- Edit the sysctl configuration file.
-
-$ sudo vi /etc/sysctl.conf
-Add the following lines.
-
+ **Edit the sysctl configuration file**
+```bash
+sudo vi /etc/sysctl.conf
+```
+**Add the following lines**
+```bash
 vm.max_map_count=262144
 fs.file-max=65536
 ulimit -n 65536
 ulimit -u 4096
-Save and exit the file.
-
-Reboot the system to apply the changes.
+```
+**Save and exit the file**
+**Reboot the system to apply the changes**
 
 
 After rebooting, go to security group of EC2 instance and edit inbound rules and add Custom TCP of 9000, 
