@@ -221,19 +221,4 @@ After rebooting, go to security group of EC2 instance and edit inbound rules and
 because by default sonarqube runs on 9000 port. 
 Now ping with public ip address of EC2 instance,
 you will be redirected to login page
-by default username is admin & password is also admin. 
-
-
-mvn clean package sonar:sonar \
-  -Dsonar.projectKey=maven-project \
-  -Dsonar.projectName='maven-project' \
-  -Dsonar.host.url=http://3.109.60.110:9000 \
-  -Dsonar.token=sqp_0e935a9a2cd7bcb0d245e1f55aac61f0b9cafeec
-
-
-
-mvn clean package sonar:sonar \
-  -Dsonar.projectKey=maven-project \
-  -Dsonar.projectName='maven-project' \
-  -Dsonar.host.url=http://3.110.102.209:9000 \
-  -Dsonar.token=sqp_0bb04356d6e8544b2ffb512025d37259317eba33
+by default username is admin & password is also admin.
