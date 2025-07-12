@@ -142,7 +142,7 @@ Save and exit the file
 
 **✅ 27. Edit the sonar script file**
 ```bash
-$ vi /opt/sonarqube/bin/linux-x86-64/sonar.sh
+vi /opt/sonarqube/bin/linux-x86-64/sonar.sh
 ```
 add the below line, in the first line itself
 ```bash
