@@ -118,6 +118,7 @@ sudo chown sonar:sonar /opt/sonarqube -R
 ```
 
 **---------------------------------------------------------------------------------------**
+
 **✅ 23. Configure SonarQube**
  **Edit the SonarQube configuration file**
 ```bash
