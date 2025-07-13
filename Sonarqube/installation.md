@@ -1,8 +1,8 @@
 **✅ 1. Install OpenJDK 17 or above**
 
-```bash
-Install OpenJDK 17.
 
+Install OpenJDK 17.
+```bash
 apt-get install openjdk-17-jdk -y
 ```
 
