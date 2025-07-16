@@ -87,13 +87,14 @@ sudo systemctl status nexus
 ```
 
 **✅ 12. Access Nexus Repository on Web Interface**
-**To access Nexus repository web interface , open your browser.
-If you are running UFW firewall on Ubuntu, open the firewall port 8081 using below command**
+
 ```
 ufw allow 8081/tcp
 ```
 **Use EC2 publicipaddress:8081**
-**To login to Nexus, click on Sign In, default username is admin**
+
+**Default username is admin**
+
 **To find default password run the below command**
 ```
 sudo vi /opt/sonatype-work/nexus3/admin.password
