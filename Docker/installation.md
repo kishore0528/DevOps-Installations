@@ -16,7 +16,11 @@ echo \
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-**✅3. Verify buildx is available**
+**✅ 3. Verify buildx is available**
 ```bash
 docker buildx version
+```
+**✅ 4.Build Your Image**
+```bash
+docker buildx build --platform linux/amd64 -t nginx:ecs_image -f Dockerfile .
 ```
