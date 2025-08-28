@@ -22,5 +22,5 @@ docker buildx version
 ```
 **✅ 4.Build Your Image**
 ```bash
-docker buildx build --platform linux/amd64 -t nginx:ecs_image -f Dockerfile .
+docker buildx build --platform linux/amd64 -t nginx:ecs_image -f dockerfile .
 ```
